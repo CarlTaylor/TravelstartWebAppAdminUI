@@ -1,10 +1,30 @@
-import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [];
+import { AirlineEditComponent } from './airline-edit/airline-edit.component';
+import { AirlineListComponent } from './airline-list/airline-list.component';
+import { AirlineSaveComponent } from './airline-save/airline-save.component';
+import { AirplaneListComponent } from './airplane-list/airplane-list.component';
+import { AirportListComponent } from './airport-list/airport-list.component';
+import { ClassListComponent } from './class-list/class-list.component';
+import { ExtraListComponent } from './extra-list/extra-list.component';
+import { FlightListComponent } from './flight-list/flight-list.component';
+import { PricingListComponent } from './pricing-list/pricing-list.component';
+import { SeatListComponent } from './seat-list/seat-list.component';
+import { TaxesListComponent } from './taxes-list/taxes-list.component';
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
+const routes: Routes = [
+  { path: 'airline-edit', component: AirlineEditComponent },
+  { path: 'airline-list', component: AirlineListComponent },
+  { path: 'airline-save', component: AirlineSaveComponent },
+  { path: '', component: AirlineListComponent },
+  { path: 'airplane-list', component: AirplaneListComponent },
+  { path: 'airport-list', component: AirportListComponent },
+  { path: 'class-list', component: ClassListComponent },
+  { path: 'extra-list', component: ExtraListComponent },
+  { path: 'flight-list', component: FlightListComponent },
+  { path: 'pricing-list', component: PricingListComponent },
+  { path: 'seat-list', component: SeatListComponent },
+  { path: 'taxes-list', component: TaxesListComponent }
+];
+
+export const routing = RouterModule.forRoot(routes);
