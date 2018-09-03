@@ -18,6 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AirlineEditComponent } from './airline-edit/airline-edit.component';
 import { AirlineSaveComponent } from './airline-save/airline-save.component';
 import { AdminService } from './service/admin.service';
+import { AirplaneEditComponent } from './airplane-edit/airplane-edit.component';
+import { AirplaneSaveComponent } from './airplane-save/airplane-save.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { AdminService } from './service/admin.service';
     SeatListComponent,
     TaxesListComponent,
     AirlineEditComponent,
-    AirlineSaveComponent
+    AirlineSaveComponent,
+    AirplaneEditComponent,
+    AirplaneSaveComponent
   ],
   imports: [
     BrowserModule,
