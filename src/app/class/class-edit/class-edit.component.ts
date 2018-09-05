@@ -4,6 +4,7 @@ import {Router} from '@angular/router';
 import {AdminService} from '../../service/admin.service';
 import {first} from 'rxjs/operators';
 import {Class} from '../../model/Class';
+import {ClassId} from '../../model/ClassId';
 
 @Component({
   selector: 'app-class-edit',
@@ -25,8 +26,7 @@ export class ClassEditComponent implements OnInit {
       return;
     }
     this.editForm = this.formBuilder.group({
-      airplaneId: [],
-      className: [],
+      classId: this.formBuilder.group(new ClassId()),
       maxSeats: ['', Validators.required],
       spaceAvailableFlag: ['', Validators.required]
     });

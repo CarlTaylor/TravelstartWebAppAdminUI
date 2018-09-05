@@ -26,7 +26,7 @@ export class ClassSaveComponent implements OnInit {
       airplaneId: [],
       name: ['', Validators.required],
       maxSeats: ['', Validators.required],
-      spaceAvailableFlag: []
+      spaceAvailableFlag: 'true'
     });
 
   }
