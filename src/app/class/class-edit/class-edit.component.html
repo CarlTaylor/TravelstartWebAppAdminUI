@@ -1,3 +1,23 @@
-<p>
-  class-edit works!
-</p>
+<div class="col-md-6">
+  <h2 class="text-center">Create Class</h2>
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="airplaneId">Airplane Id: </label>
+      <input type="number" formControlName="airplaneId" placeholder="AirplaneId" name="airplaneId" class="form-control" id="airplaneId">
+    </div>
+    <div class="form-group">
+      <label for="className">Class name: </label>
+      <input type="text" formControlName="className" placeholder="ClassName" name="className" class="form-control" id="className">
+    </div>
+    <div class="form-group">
+      <label for="maxSeats">Maximum seats: </label>
+      <input type="number" formControlName="maxSeats" placeholder="MaxSeats" name="maxSeats" class="form-control" id="maxSeats">
+    </div>
+    <div class="form-group">
+      <label for="spaceAvailableFlag">Space available: </label>
+      <select type="text" formControlName="spaceAvailableFlag" name="spaceAvailableFlag"
+              class="form-control" id="spaceAvailableFlag"><option>true</option><option>false</option></select>
+    </div>
+    <button class="btn btn-success">Update</button>
+  </form>
+</div>

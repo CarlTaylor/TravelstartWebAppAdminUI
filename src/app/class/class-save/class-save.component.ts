@@ -1,4 +1,8 @@
 import {Component, OnInit} from '@angular/core';
+import {Airplane} from '../../model/Airplane';
+import {Router} from '@angular/router';
+import {AdminService} from '../../service/admin.service';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-class-save',
@@ -7,9 +11,31 @@ import {Component, OnInit} from '@angular/core';
 })
 export class ClassSaveComponent implements OnInit {
 
-  constructor() { }
+  airplanes: Airplane[];
+
+  constructor(private formBuilder: FormBuilder, private router: Router, private adminService: AdminService) { }
+
+  saveForm: FormGroup;
 
   ngOnInit() {
+    this.adminService.getAirplanes().subscribe(
+      data => { this.airplanes = data;
+      });
+
+    this.saveForm = this.formBuilder.group({
+      airplaneId: [],
+      name: ['', Validators.required],
+      maxSeats: ['', Validators.required],
+      spaceAvailableFlag: []
+    });
+
+  }
+
+  onSubmit() {
+    this.adminService.saveClass(this.saveForm.value)
+      .subscribe( data => {
+        this.router.navigate(['class-list']);
+      });
   }
 
 }

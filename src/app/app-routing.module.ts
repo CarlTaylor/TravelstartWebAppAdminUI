@@ -19,6 +19,8 @@ import {ExtraEditComponent} from './extra/extra-edit/extra-edit.component';
 import {ExtraSaveComponent} from './extra/extra-save/extra-save.component';
 import {TaxesEditComponent} from './taxes/taxes-edit/taxes-edit.component';
 import {TaxesSaveComponent} from './taxes/taxes-save/taxes-save.component';
+import {ClassEditComponent} from './class/class-edit/class-edit.component';
+import {ClassSaveComponent} from './class/class-save/class-save.component';
 
 const routes: Routes = [
   { path: 'airline-edit', component: AirlineEditComponent },
@@ -31,7 +33,9 @@ const routes: Routes = [
   { path: 'airport-edit', component: AirportEditComponent },
   { path: 'airport-list', component: AirportListComponent },
   { path: 'airport-save', component: AirportSaveComponent },
+  { path: 'class-edit', component: ClassEditComponent },
   { path: 'class-list', component: ClassListComponent },
+  { path: 'class-save', component: ClassSaveComponent },
   { path: 'extra-edit', component: ExtraEditComponent},
   { path: 'extra-list', component: ExtraListComponent },
   { path: 'extra-save', component: ExtraSaveComponent },

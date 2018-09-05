@@ -13,7 +13,7 @@
     </thead>
     <tbody>
     <tr *ngFor="let airplane of airplanes">
-      <td class="hidden">{{airplane.id}}</td>
+      <td>{{airplane.id}}</td>
       <td>{{airplane.name}}</td>
       <td><button class="btn btn-danger" (click)="deleteAirplane(airplane)"> Delete</button>
         <button class="btn btn-danger" (click)="editAirplane(airplane)" style="margin-left: 20px;"> Edit</button></td>

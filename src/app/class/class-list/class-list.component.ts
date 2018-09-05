@@ -1,4 +1,7 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {AdminService} from '../../service/admin.service';
+import {Class} from '../../model/Class';
 
 @Component({
   selector: 'app-class-list',
@@ -7,9 +10,32 @@ import {Component, OnInit} from '@angular/core';
 })
 export class ClassListComponent implements OnInit {
 
-  constructor() { }
+  classes: Class[];
+
+  constructor(private router: Router, private adminService: AdminService) { }
 
   ngOnInit() {
+    this.adminService.getClasses().subscribe(
+      data => { this.classes = data;
+      });
   }
 
+  deleteClass(_class: Class): void {
+    this.adminService.deleteClass(_class.classId.airplaneId, _class.classId.className)
+      .subscribe( data => {
+        this.classes = this.classes.filter(a => a !== _class);
+      });
+  }
+
+  editClass(_class: Class): void {
+    localStorage.removeItem('editClassName');
+    localStorage.removeItem('editAirplaneId');
+    localStorage.setItem('editClassName', _class.classId.className);
+    localStorage.setItem('editAirplaneId', _class.classId.airplaneId.toString());
+    this.router.navigate(['class-edit']);
+  }
+
+  saveClass(): void {
+    this.router.navigate(['class-save']);
+  }
 }

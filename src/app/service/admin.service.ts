@@ -5,6 +5,7 @@ import {Airplane} from '../model/Airplane';
 import {Airport} from '../model/Airport';
 import {Extra} from '../model/Extra';
 import {Taxes} from '../model/Taxes';
+import {Class} from '../model/Class';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,7 @@ export class AdminService {
   baseAirlineUrl = 'http://localhost:8080/admin/airline';
   baseAirplaneUrl = 'http://localhost:8080/admin/airplane';
   baseAirportUrl = 'http://localhost:8080/admin/airport';
+  baseClassUrl = 'http://localhost:8080/admin/class';
   baseExtraUrl = 'http://localhost:8080/admin/extra';
   baseTaxesUrl = 'http://localhost:8080/admin/taxes';
 
@@ -116,5 +118,25 @@ export class AdminService {
 
   deleteTaxes(id: number) {
     return this.http.delete(this.baseTaxesUrl + '/' + id);
+  }
+
+  getClasses() {
+    return this.http.get<Class[]>(this.baseClassUrl);
+  }
+
+  getClassById(airplaneId: number, className: string) {
+    return this.http.get<Class>(this.baseClassUrl + '/' + airplaneId + '/' + className);
+  }
+
+  saveClass(_class: Class) {
+    return this.http.post(this.baseClassUrl, _class);
+  }
+
+  editClass(_class: Class) {
+    return this.http.put(this.baseClassUrl + '/' + _class.classId.airplaneId + '/' + _class.classId.className, _class);
+  }
+
+  deleteClass(airplaneId: number, className: string) {
+    return this.http.delete(this.baseClassUrl + '/' + airplaneId + '/' + className);
   }
 }

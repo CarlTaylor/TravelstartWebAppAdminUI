@@ -13,7 +13,7 @@
     </thead>
     <tbody>
     <tr *ngFor="let taxes of taxes">
-      <td class="hidden">{{taxes.id}}</td>
+      <td>{{taxes.id}}</td>
       <td>{{taxes.amount}}</td>
       <td><button class="btn btn-danger" (click)="deleteTaxes(taxes)"> Delete</button>
         <button class="btn btn-danger" (click)="editTaxes(taxes)" style="margin-left: 20px;"> Edit</button></td>

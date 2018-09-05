@@ -1,3 +1,27 @@
-<p>
-  class-list works!
-</p>
+<h1>Classes</h1>
+
+<div class="col-md-6">
+  <h2> Class Details</h2>
+  <button class="btn btn-danger" (click)="saveClass()"> Create Class</button>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Airplane ID</th>
+      <th>Class name</th>
+      <th>Max seats</th>
+      <th>Space Available</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let _class of classes">
+      <td>{{_class.classId.airplaneId}}</td>
+      <td>{{_class.classId.className}}</td>
+      <td>{{_class.maxSeats}}</td>
+      <td>{{_class.spaceAvailableFlag}}</td>
+      <td><button class="btn btn-danger" (click)="deleteClass(_class)"> Delete</button>
+        <button class="btn btn-danger" (click)="editClass(_class)" style="margin-left: 20px;"> Edit</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

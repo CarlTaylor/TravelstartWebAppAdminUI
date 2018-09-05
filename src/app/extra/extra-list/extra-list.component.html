@@ -14,7 +14,7 @@
     </thead>
     <tbody>
     <tr *ngFor="let extra of extras">
-      <td class="hidden">{{extra.id}}</td>
+      <td>{{extra.id}}</td>
       <td>{{extra.description}}</td>
       <td>{{extra.price}}</td>
       <td><button class="btn btn-danger" (click)="deleteExtra(extra)"> Delete</button>
