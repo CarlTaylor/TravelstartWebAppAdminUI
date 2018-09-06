@@ -129,7 +129,7 @@ export class AdminService {
   }
 
   saveClass(_class: Class) {
-    return this.http.post(this.baseClassUrl + '/' + _class.classId.airplaneId + '/' + _class.classId.className, _class);
+    return this.http.post(this.baseClassUrl, _class);
   }
 
   editClass(_class: Class) {
