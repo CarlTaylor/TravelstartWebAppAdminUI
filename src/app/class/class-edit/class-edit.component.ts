@@ -26,7 +26,10 @@ export class ClassEditComponent implements OnInit {
       return;
     }
     this.editForm = this.formBuilder.group({
-      classId: this.formBuilder.group(new ClassId()),
+      classId: this.formBuilder.group({
+        airplaneId: ['', Validators.required],
+        className: ['', Validators.required]
+      }),
       maxSeats: ['', Validators.required],
       spaceAvailableFlag: ['', Validators.required]
     });
