@@ -1,14 +1,17 @@
 <div class="col-md-6">
   <h2 class="text-center">Create Class</h2>
   <form [formGroup]="saveForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label for="airplaneId">Airplane Id: </label>
-      <select type="number" formControlName="airplaneId" name="airplaneId" class="form-control"
-              id="airplaneId"><option *ngFor="let airplane of airplanes">{{airplane.id}}</option></select>
-    </div>
-    <div class="form-group">
-      <label for="name">Name: </label>
-      <input type="text" formControlName="name" placeholder="Name" name="name" class="form-control" id="name">
+    <div  formGroupName="classId" >
+      <div class="form-group" >
+        <label for="airplaneId">Airplane Id: </label>
+        <select type="number" formControlName="airplaneId" name="airplaneId" class="form-control"
+                id="airplaneId"><option *ngFor="let airplane of airplanes">{{airplane.id}}</option></select>
+      </div>
+      <div class="form-group">
+        <label for="className">Class name: </label>
+        <input type="text"formControlName="className" placeholder="ClassName" name="className" class="form-control"
+               id="className">
+      </div>
     </div>
     <div class="form-group">
       <label for="maxSeats">Maximum seats: </label>

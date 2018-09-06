@@ -23,15 +23,21 @@ export class ClassSaveComponent implements OnInit {
       });
 
     this.saveForm = this.formBuilder.group({
-      airplaneId: [],
-      name: ['', Validators.required],
+      classId: this.formBuilder.group({
+        airplaneId: ['', Validators.required],
+        className: ['', Validators.required]
+      }),
       maxSeats: ['', Validators.required],
-      spaceAvailableFlag: 'true'
+      spaceAvailableFlag: ['', Validators.required]
     });
 
   }
 
   onSubmit() {
+    localStorage.removeItem('saveClassName');
+    localStorage.removeItem('saveAirplaneId');
+    localStorage.setItem('saveClassName', this.saveForm.controls['airplaneId'].value);
+    localStorage.setItem('saveAirplaneId', this.saveForm.controls['className'].value);
     this.adminService.saveClass(this.saveForm.value)
       .subscribe( data => {
         this.router.navigate(['class-list']);
