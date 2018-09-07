@@ -36,4 +36,10 @@ export class AirplaneListComponent implements OnInit {
   saveAirplane(): void {
     this.router.navigate(['airplane-save']);
   }
+
+  viewClasses(airplane: Airplane): void {
+    localStorage.removeItem('ClassByAirplaneId');
+    localStorage.setItem('ClassByAirplaneId', airplane.id.toString());
+    this.router.navigate(['class-list']);
+  }
 }

@@ -128,6 +128,10 @@ export class AdminService {
     return this.http.get<Class>(this.baseClassUrl + '/' + airplaneId + '/' + className);
   }
 
+  getClassByIdAirplaneId(airplaneId: number) {
+    return this.http.get<Class[]>(this.baseClassUrl + '/' + airplaneId);
+  }
+
   saveClass(_class: Class) {
     return this.http.post(this.baseClassUrl, _class);
   }

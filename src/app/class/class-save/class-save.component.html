@@ -9,7 +9,7 @@
       </div>
       <div class="form-group">
         <label for="className">Class name: </label>
-        <input type="text"formControlName="className" placeholder="ClassName" name="className" class="form-control"
+        <input type="text" formControlName="className" placeholder="ClassName" name="className" class="form-control"
                id="className">
       </div>
     </div>
@@ -20,7 +20,7 @@
     <div class="form-group">
       <label for="spaceAvailableFlag">Space available: </label>
       <select type="text" formControlName="spaceAvailableFlag" name="spaceAvailableFlag"
-              class="form-control" id="spaceAvailableFlag"><option>true</option><option>false</option></select>
+              class="form-control" id="spaceAvailableFlag" [value]='true'><option>true</option><option>false</option></select>
     </div>
     <button class="btn btn-success">Create</button>
   </form>
