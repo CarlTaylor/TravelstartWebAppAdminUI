@@ -2,10 +2,10 @@
   <h2 class="text-center">Create Class</h2>
   <form [formGroup]="saveForm" (ngSubmit)="onSubmit()">
     <div  formGroupName="classId" >
-      <div class="form-group" >
-        <label for="airplaneId">Airplane Id: </label>
-        <select type="number" formControlName="airplaneId" name="airplaneId" class="form-control"
-                id="airplaneId"><option *ngFor="let airplane of airplanes">{{airplane.id}}</option></select>
+      <div class="form-group">
+        <label for="airplaneId">Airplane id: </label>
+        <input type="number" formControlName="airplaneId" placeholder="AirplaneId" name="airplaneId" class="form-control"
+               id="airplaneId" disabled>
       </div>
       <div class="form-group">
         <label for="className">Class name: </label>
@@ -20,7 +20,7 @@
     <div class="form-group">
       <label for="spaceAvailableFlag">Space available: </label>
       <select type="text" formControlName="spaceAvailableFlag" name="spaceAvailableFlag"
-              class="form-control" id="spaceAvailableFlag" [value]='true'><option>true</option><option>false</option></select>
+              class="form-control" id="spaceAvailableFlag"><option>true</option><option>false</option></select>
     </div>
     <button class="btn btn-success">Create</button>
   </form>

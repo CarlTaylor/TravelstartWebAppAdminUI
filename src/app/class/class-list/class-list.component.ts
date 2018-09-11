@@ -16,18 +16,10 @@ export class ClassListComponent implements OnInit {
 
   ngOnInit() {
     const airplaneId = localStorage.getItem('ClassByAirplaneId');
-    if (airplaneId === null) {
-      this.adminService.getClasses().subscribe(
-        data => {
-          this.classes = data;
-        });
-    } else {
       this.adminService.getClassByIdAirplaneId(+airplaneId).subscribe(
-        data => {
-          this.classes = data;
-        });
-    }
-    localStorage.removeItem('ClassByAirplaneId');
+      data => {
+        this.classes = data;
+      });
   }
 
   deleteClass(_class: Class): void {

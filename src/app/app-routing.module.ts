@@ -26,7 +26,6 @@ const routes: Routes = [
   { path: 'airline-edit', component: AirlineEditComponent },
   { path: 'airline-list', component: AirlineListComponent },
   { path: 'airline-save', component: AirlineSaveComponent },
-  { path: '', component: AirlineListComponent },
   { path: 'airplane-edit', component: AirplaneEditComponent },
   { path: 'airplane-list', component: AirplaneListComponent },
   { path: 'airplane-save', component: AirplaneSaveComponent },

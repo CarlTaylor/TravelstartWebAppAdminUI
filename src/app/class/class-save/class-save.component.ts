@@ -22,15 +22,16 @@ export class ClassSaveComponent implements OnInit {
       data => { this.airplanes = data;
       });
 
+    const airplaneId = localStorage.getItem('ClassByAirplaneId');
+
     this.saveForm = this.formBuilder.group({
       classId: this.formBuilder.group({
-        airplaneId: [],
+        airplaneId: [airplaneId],
         className: []
       }),
-      maxSeats: ['', Validators.required],
-      spaceAvailableFlag: ['', Validators.required]
+      maxSeats: [0, Validators.required],
+      spaceAvailableFlag: ['true', Validators.required]
     });
-
   }
 
   onSubmit() {
