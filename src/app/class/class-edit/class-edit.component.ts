@@ -14,6 +14,7 @@ export class ClassEditComponent implements OnInit {
 
   class: Class;
   editForm: FormGroup;
+
   constructor(private formBuilder: FormBuilder, private router: Router, private adminService: AdminService) { }
 
   ngOnInit() {

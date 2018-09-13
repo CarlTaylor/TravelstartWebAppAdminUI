@@ -1,3 +1,26 @@
-<p>
-  seat-list works!
-</p>
+<h1>Seats</h1>
+<div class="col-md-6">
+  <h2> Seat Details</h2>
+  <button class="btn btn-danger" (click)="saveSeat()"> Create Class</button>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Airplane ID</th>
+      <th>Class name</th>
+      <th>Seat number</th>
+      <th>Available</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let seat of seats">
+      <td>{{seat.seatId.airplaneId}}</td>
+      <td>{{seat.seatId.className}}</td>
+      <td>{{seat.seatId.num}}</td>
+      <td>{{seat.seatAvailableFlag}}</td>
+      <td><button class="btn btn-danger" (click)="deleteSeat(seat)"> Delete</button>
+        <button class="btn btn-danger" (click)="editSeat(seat)" style="margin-left: 20px;"> Edit</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

@@ -30,14 +30,22 @@ export class ClassListComponent implements OnInit {
   }
 
   editClass(_class: Class): void {
-    localStorage.removeItem('editClassName');
     localStorage.removeItem('editAirplaneId');
-    localStorage.setItem('editClassName', _class.classId.className);
+    localStorage.removeItem('editClassName');
     localStorage.setItem('editAirplaneId', _class.classId.airplaneId.toString());
+    localStorage.setItem('editClassName', _class.classId.className);
     this.router.navigate(['class-edit']);
   }
 
   saveClass(): void {
     this.router.navigate(['class-save']);
+  }
+
+  viewSeats(_class: Class): void {
+    localStorage.removeItem('SeatByAirplaneId');
+    localStorage.removeItem('SeatByClassName');
+    localStorage.setItem('SeatByAirplaneId', _class.classId.airplaneId.toString());
+    localStorage.setItem('SeatByClassName', _class.classId.className);
+    this.router.navigate(['seat-list']);
   }
 }

@@ -6,6 +6,8 @@ import {Airport} from '../model/Airport';
 import {Extra} from '../model/Extra';
 import {Taxes} from '../model/Taxes';
 import {Class} from '../model/Class';
+import {Seat} from '../model/Seat';
+import {SeatId} from '../model/SeatId';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +20,7 @@ export class AdminService {
   baseAirportUrl = 'http://localhost:8080/admin/airport';
   baseClassUrl = 'http://localhost:8080/admin/class';
   baseExtraUrl = 'http://localhost:8080/admin/extra';
+  baseSeatUrl = 'http://localhost:8080/admin/seat';
   baseTaxesUrl = 'http://localhost:8080/admin/taxes';
 
   getAirlines() {
@@ -137,10 +140,33 @@ export class AdminService {
   }
 
   editClass(_class: Class) {
-    return this.http.put(this.baseClassUrl + '/' + _class.classId.airplaneId + '/' + _class.classId.className, _class);
+    return this.http.put(this.baseClassUrl + '/' + _class.classId.airplaneId + '/'
+      + _class.classId.className, _class);
   }
 
   deleteClass(airplaneId: number, className: string) {
     return this.http.delete(this.baseClassUrl + '/' + airplaneId + '/' + className);
+  }
+
+  getAllSeatsByAirplaneIdAndClassName(airplaneId: number, className: string) {
+    return this.http.get<Seat[]>(this.baseSeatUrl + '/' + airplaneId + '/' + className);
+  }
+
+  getSeatBySeatId(airplaneId: number, className: string, num: number) {
+    return this.http.get<Seat>(this.baseSeatUrl + '/' + airplaneId + '/' + className + '/' + num);
+  }
+
+  saveSeat(seat: Seat) {
+    return this.http.post(this.baseSeatUrl, seat);
+  }
+
+  editSeat(seat: Seat) {
+    return this.http.put(this.baseSeatUrl + '/' + seat.seatId.airplaneId + '/' + seat.seatId.className
+      + '/' + seat.seatId.num, seat);
+  }
+
+  deleteSeat(seatId: SeatId) {
+    return this.http.delete(this.baseSeatUrl + '/' + seatId.airplaneId + '/' + seatId.className + '/'
+      + seatId.num);
   }
 }

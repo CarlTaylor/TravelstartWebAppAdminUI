@@ -1,3 +1,11 @@
-<p>
-  seat-edit works!
-</p>
+<div class="col-md-6">
+  <h2 class="text-center">Edit Seat</h2>
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="seatAvailableFlag">Seat available: </label>
+      <select type="text" formControlName="seatAvailableFlag" name="seatAvailableFlag"
+              class="form-control" id="seatAvailableFlag"><option>true</option><option>false</option></select>
+    </div>
+    <button class="btn btn-success">Update</button>
+  </form>
+</div>

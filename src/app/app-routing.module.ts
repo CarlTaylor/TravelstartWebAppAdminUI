@@ -11,7 +11,9 @@ import {ClassListComponent} from './class/class-list/class-list.component';
 import {ExtraListComponent} from './extra/extra-list/extra-list.component';
 import {FlightListComponent} from './flight/flight-list/flight-list.component';
 import {PricingListComponent} from './pricing/pricing-list/pricing-list.component';
+import {SeatEditComponent} from './seat/seat-edit/seat-edit.component';
 import {SeatListComponent} from './seat/seat-list/seat-list.component';
+import {SeatSaveComponent} from './seat/seat-save/seat-save.component';
 import {TaxesListComponent} from './taxes/taxes-list/taxes-list.component';
 import {AirportEditComponent} from './airport/airport-edit/airport-edit.component';
 import {AirportSaveComponent} from './airport/airport-save/airport-save.component';
@@ -40,7 +42,9 @@ const routes: Routes = [
   { path: 'extra-save', component: ExtraSaveComponent },
   { path: 'flight-list', component: FlightListComponent },
   { path: 'pricing-list', component: PricingListComponent },
+  { path: 'seat-edit', component: SeatEditComponent },
   { path: 'seat-list', component: SeatListComponent },
+  { path: 'seat-save', component: SeatSaveComponent },
   { path: 'taxes-edit', component: TaxesEditComponent },
   { path: 'taxes-list', component: TaxesListComponent },
   { path: 'taxes-save', component: TaxesSaveComponent }

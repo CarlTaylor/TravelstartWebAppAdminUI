@@ -1,13 +1,7 @@
 <div class="col-md-6">
   <h2 class="text-center">Create Class</h2>
   <form [formGroup]="saveForm" (ngSubmit)="onSubmit()">
-    <div  formGroupName="classId" >
-      <div class="form-group">
-        <label for="airplaneId">Airplane id: </label>
-        <input type="number" formControlName="airplaneId" placeholder="AirplaneId" name="airplaneId" class="form-control"
-               id="airplaneId" disabled>
-      </div>
-      <div class="form-group">
+    <div  formGroupName="classId" ><div class="form-group">
         <label for="className">Class name: </label>
         <input type="text" formControlName="className" placeholder="ClassName" name="className" class="form-control"
                id="className">
